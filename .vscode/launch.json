@@ -18,7 +18,7 @@
         "request": "launch",
         "runtimeArgs": [
             "run-script",
-            "install"
+            "first-install"
         ],
         "runtimeExecutable": "npm",
         "skipFiles": [
