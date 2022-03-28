@@ -1,0 +1,30 @@
+{
+    "configurations": [
+    {
+        "name": "run server side",
+        "request": "launch",
+        "runtimeArgs": [
+            "run-script",
+            "dev"
+        ],
+        "runtimeExecutable": "npm",
+        "skipFiles": [
+            "<node_internals>/**"
+        ],
+        "type": "pwa-node"
+    },
+    {
+        "name": "install server",
+        "request": "launch",
+        "runtimeArgs": [
+            "run-script",
+            "install"
+        ],
+        "runtimeExecutable": "npm",
+        "skipFiles": [
+            "<node_internals>/**"
+        ],
+        "type": "pwa-node"
+    }
+    ]
+}
