@@ -2,7 +2,7 @@
   "name": "budget_performance_management_system_server_side",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "dev": "npx nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
