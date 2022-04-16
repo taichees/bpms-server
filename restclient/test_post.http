@@ -1,7 +1,3 @@
-get http://localhost:8080/
-
-get http://localhost:8080/test
-
 
 POST http://localhost:8080/test
 content-type: application/json
