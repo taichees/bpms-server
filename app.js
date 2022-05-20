@@ -15,8 +15,6 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'DB connection error:'));
 db.once('open', () => console.log('DB connection successful'));
 
-const test = require('./db_modules/test');
-
 //for rooting
 var indexRouter = require('./routes/index');
 var testRouter = require('./routes/test');
