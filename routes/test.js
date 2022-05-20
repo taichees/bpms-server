@@ -6,12 +6,12 @@ router.get('/', (req, res) => {
     res.send('Here is test page')
 })
 
-router.get('/test', async (req, res) => {
+router.get('/', async (req, res) => {
     const test_data = await test.find({});
     res.json(test_data);
 })
 
-router.post('/test', async (req, res) => {
+router.post('/', async (req, res) => {
     const test_data = new test({
         name: req.body.name,
         str: req.body.str
