@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 8080
+const port = process.env.PORT || '5000'
 const bodyParser = require('body-parser');
 
 // urlencodedとjsonは別々に初期化する
@@ -10,7 +10,8 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1/test_db');
+const DB = process.env.DB_URL || 'mongodb://127.0.0.1/test_db';
+mongoose.connect(DB);
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'DB connection error:'));
 db.once('open', () => console.log('DB connection successful'));
