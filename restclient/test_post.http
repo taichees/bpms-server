@@ -2,7 +2,7 @@
 POST http://localhost:5000/test
 content-type: application/json
 
-# {
-#     "name": "taichi",
-#     "str": "abcde"
-# }
+{
+    "name": "taichi",
+    "str": "abcde"
+}
