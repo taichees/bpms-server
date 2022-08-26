@@ -1,0 +1,19 @@
+
+POST http://localhost:5000/schema_setting
+content-type: application/json
+
+{
+    "schema_name":"test",
+    "columns":[
+        {
+            "column_name": "name",
+            "type": "String",
+            "ref":""
+        },
+        {
+            "column_name": "str",
+            "type": "String",
+            "ref":""
+        }
+    ]
+}
