@@ -1,5 +1,5 @@
 
-POST http://localhost:5000/test
+POST http://localhost:5000/schema/test_2
 content-type: application/json
 
 {

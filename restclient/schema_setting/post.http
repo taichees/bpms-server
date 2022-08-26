@@ -3,15 +3,20 @@ POST http://localhost:5000/schema_setting
 content-type: application/json
 
 {
-    "schema_name":"test",
+    "schema_name":"test_2",
     "columns":[
         {
-            "column_name": "name",
+            "column_name": "age",
+            "type": "Number",
+            "ref":""
+        },
+        {
+            "column_name": "addr",
             "type": "String",
             "ref":""
         },
         {
-            "column_name": "str",
+            "column_name": "post-code",
             "type": "String",
             "ref":""
         }
