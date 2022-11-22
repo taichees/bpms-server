@@ -1,0 +1,19 @@
+
+PUT http://localhost:5000/schema_setting/630880cf6bdce2289cc47805
+content-type: application/json
+
+{
+    "schema_name":"test_2",
+    "columns":[
+        {
+            "column_name": "age",
+            "type": "Number",
+            "ref":""
+        },
+        {
+            "column_name": "addr",
+            "type": "String",
+            "ref":""
+        }
+    ]
+}
