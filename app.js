@@ -1,7 +1,6 @@
 const express = require('express')
 const cors = require('cors')
 const app = express()
-
 const port = process.env.PORT || '5000'
 const bodyParser = require('body-parser');
 
@@ -10,21 +9,7 @@ app.use(cors())
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-app.use(express.json());
-
-//for rooting
-const readdirSync = require('fs');
-const baseName = require('./utils');
-
-const fileList =readdirSync.readdirSync("./routes", { withFileTypes: true })
-  .filter((dirent) => dirent.isFile())
-  .map((dirent) => dirent.name)
-
-for (const file of fileList) {
-  console.log(baseName.baseName(file))
-  // tslint:disable-next-line:no-var-requires
-  app.use(`/${baseName.baseName(file)}`, require(`./routes/${baseName.baseName(file)}`))
-}
+app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
@@ -110,8 +95,6 @@ app.delete('/schema/:schema_name/:id', async (req, res) => {
   res.json(model_data);
 })
 
-//listen
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
-module.exports = app;
