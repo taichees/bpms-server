@@ -16,10 +16,18 @@ db.on('error', console.error.bind(console, 'DB connection error:'));
 db.once('open', () => console.log('DB connection successful'));
 
 //for rooting
-var indexRouter = require('./routes/index');
-var testRouter = require('./routes/test');
-app.use('/', indexRouter);
-app.use('/test', testRouter);
+const readdirSync = require('fs');
+const baseName = require('./utils');
+
+const fileList =readdirSync.readdirSync("./routes", { withFileTypes: true })
+  .filter((dirent) => dirent.isFile())
+  .map((dirent) => dirent.name)
+
+for (const file of fileList) {
+  console.log(baseName.baseName(file))
+  // tslint:disable-next-line:no-var-requires
+  app.use(`/${baseName.baseName(file)}`, require(`./routes/${baseName.baseName(file)}`))
+}
 
 //listen
 app.listen(port, () => {
